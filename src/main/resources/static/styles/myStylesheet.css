@@ -1,0 +1,27 @@
+.table-bordered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-3 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-control {
+    width: 300px;
+    padding: 0;
+    margin: auto;
+    height: 30px;
+}
+
+.btn {
+    height: 19px;
+    width: 52px;
+    padding: 0px;
+    font-size: 10px;
+}
+
+.form-label {
+    margin: 0;
+}

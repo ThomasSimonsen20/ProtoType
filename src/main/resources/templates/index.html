@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link th:href="@{/styles/myStylesheet.css}" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontpage</title>
+</head>
+<body>
+
+<div class="mb-3">
+    <form name="findHotel" action="/FindHotel" method="post">
+        <div>
+            <label class="form-label">Insert link to booking.com</label><br>
+            <input class="form-control" type="text" name="hotelURL" required>
+            <button type="submit" class="btn btn-info">Get info</button>
+        </div>
+    </form>
+</div>
+
+
+<table class="table-bordered" th:if="${hotel != null}">
+    <tbody>
+    <tr>
+        <th>Hotel Name:</th>
+        <td th:text="${hotel.getHotelName()}"></td>
+    </tr>
+    <tr>
+        <th>Address:</th>
+        <td th:text="${hotel.getAddress()}"></td>
+    </tr>
+    <tr>
+        <th>Zip Code:</th>
+        <td th:text="${hotel.getZipCode()}"></td>
+    </tr>
+    <tr>
+        <th>City:</th>
+        <td th:text="${hotel.getCity()}"></td>
+    </tr>
+    <tr>
+        <th>Country:</th>
+        <td th:text="${hotel.getCountry()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<!--
+<div>
+    <div th:if="${hotel != null}">
+        <p th:text="${hotel.getHotelName()}">hotelName</p>
+        <p th:text="${hotel.getAddress()}">Address</p>
+        <p th:text="${hotel.getZipCode()}">zipCode</p>
+        <p th:text="${hotel.getCity()}">City</p>
+        <p th:text="${hotel.getCountry()}">Country</p>
+    </div>
+</div>
+-->
+</body>
+</html>
